@@ -3,13 +3,13 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Vendor from '../src/pages/Vendor';  
-import { Button } from './components/ui/button';
 import Volunteer from './pages/Volunteer';
 import Beneficiary from './pages/Beneficiary';
 // import NGOInformation from './pages/Divider';
-import DividerVariants from '../src/pages/Divider';
+import About from './pages/About';
 import Home from './pages/Home'; 
 import Login from './components/ui/Login';
+import Vet from './pages/Vet';
 
 function App() {
   return (
@@ -32,8 +32,8 @@ function App() {
           <Route path="/volunteer" element={<Volunteer />} />
           <Route path="/Beneficiary" element = {< Beneficiary/>}/>
           <Route path="/login" element = {< Login/>}/>
-          <Route path="/Divider" element = {< DividerVariants/>}/>
-          
+          <Route path="/About" element = {< About/>}/>
+          <Route path="/Vet" element = {< Vet/>}/>
 
         </Routes>
       </div>

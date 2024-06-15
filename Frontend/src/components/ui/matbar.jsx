@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import { Link } from "react-router-dom";
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -71,32 +72,45 @@ export default function SearchAppBar() {
               component="div"
               sx={{ cursor: 'pointer' }}
             >
-              Home
+              <Link to="/">
+                Home
+              </Link>
+
             </Typography>
             <Typography
               variant="body1"
               component="div"
               sx={{ cursor: 'pointer' }}
             >
-              About
+              <Link to="/about">
+                  About
+              </Link>
             </Typography>
             <Typography
               variant="body1"
               component="div"
               sx={{ cursor: 'pointer' }}
             >
-              Contact
+                  Contact
             </Typography>
           </Box>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
+          <div className="absolute top-4 right-4 z-10">
+          <Link to="/login">
+            <button
+              style={{
+                backgroundColor: "blue",
+                color: "white",
+                border: "none",
+                padding: "10px 20px",
+                fontSize: "16px",
+                cursor: "pointer",
+                borderRadius: "5px",
+              }}
+            >
+              Login
+            </button>
+          </Link>
+        </div>
         </Toolbar>
       </AppBar>
     </Box>

@@ -10,23 +10,7 @@ function Banner() {
   return (
     <div className="relative flex flex-col md:flex-row w-full min-h-screen">
       {/* Login Button */}
-      <div className="absolute top-4 right-4 z-10">
-        <Link to="/login">
-          <button
-            style={{
-              backgroundColor: "blue",
-              color: "white",
-              border: "none",
-              padding: "10px 20px",
-              fontSize: "16px",
-              cursor: "pointer",
-              borderRadius: "5px",
-            }}
-          >
-            Login
-          </button>
-        </Link>
-      </div>
+      
         
       {/* Banner Content */}
       <div className="w-full md:w-1/2 flex flex-col justify-center p-8 md:p-20 bg-white z-10">
@@ -84,7 +68,7 @@ function Banner() {
       </div>
 
       {/* Carousel Banner Image */}
-      <div className="w-full h-full md:w-1/2 h-full flex-1">
+      <div className="w-full md:w-1/2 flex flex-col justify-center p-8 md:pt-60 bg-white z-10">
         <Carousel
           autoPlay
           infiniteLoop

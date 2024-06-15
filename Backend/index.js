@@ -183,7 +183,7 @@ app.get("/all_volunteers", async (req, res) => {
 });
 app.get("/all_vendors", async (req, res) => {
     try {
-        const vendors = await vendor.find({}).select('name location goatspur');
+        const vendors = await vendor.find({}).select('name');
         res.status(200).send({
             data: vendors
         });
@@ -212,7 +212,7 @@ app.get("/all_vet", async (req, res) => {
 app.get("/all_beneficiary", async (req, res) => {
     try {
         // Fetch only the 'name' and 'location' fields from the all_beneficiary collection
-        const beninfo = await beneficiary.find({}).select('name location');
+        const beninfo = await beneficiary.find({}).select('name location age');
 
         res.status(200).send({
             data: beninfo

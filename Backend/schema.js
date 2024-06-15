@@ -4,6 +4,7 @@ require('dotenv').config();
 mongoose.connect(process.env.DATABASE_URL);
 
 const beneficiarySchema = new mongoose.Schema({
+    
     name : String,
     contact : String,
     gender : String,
@@ -27,6 +28,8 @@ const goatsSchema = new mongoose.Schema({
 })
 
 const volunteerSchema = new mongoose.Schema({
+    username : String,
+    password : String,
     name : String,
     contact : String,
     Age : String,
@@ -38,6 +41,8 @@ const volunteerSchema = new mongoose.Schema({
 })
 
 const vendorSchema = new mongoose.Schema({
+    username : String,
+    password : String,
     name : String,
     age : String,
     contact : String,
@@ -49,6 +54,8 @@ const vendorSchema = new mongoose.Schema({
 })
 
 const vetSchema = new mongoose.Schema({
+    username : String,
+    password : String,
     name : String,
     name : String,
     gender : String,

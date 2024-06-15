@@ -16,8 +16,61 @@ app.use(express.json());
 
 
 
+app.post('/signup', async (req, res) => {
+    const {username, password,name,age,contact,cart,address} = req.body;
+    try {
+        const newven = new vendor({ username,password,name,age,contact,cart,address});
+        await newven.save();
+        res.status(201).send('Sign up successful');
+    } catch (error) {
+        console.error('Error signing up:', error);
+        res.status(500).send('Error signing up');
+    }
+});
+app.post('/login', async (req, res) => {
+    const { username, password, role } = req.body;
+    try {
+        let user = null;
+        switch (role) {
+            case 'vendor':
+                user = await vendor.findOne({ username });
+                break;
+            case 'vet':
+                user = await vet.findOne({ username });
+                break;
+            case 'volunteer':
+                user = await volunteer.findOne({ username });
+                break;
+            default:
+                return res.status(400).send({
+                    error: 'Invalid role specified'
+                });
+        }
+        if (!user) {
+            return res.status(404).send({
+                error: 'User not found'
+            });
+        }
+        if (user.password == password){
+            res.status(200).send({
+                message: 'Login successful',
+                user
+            });
+        }
+        return res.status(403).send({
+            message : "Invalid creds"
+        })
+        
+        
 
-
+    } catch (error) {
+        console.error(error);
+        res.status(500).send({
+            error: 'An error occurred while logging in',
+            details: error.message
+        });
+    }
+});
 
 
 
@@ -65,10 +118,12 @@ app.post('/addbeneficiary', async (req, res) => {
 });
 
 app.post('/addvolunteer', async (req, res) => {
-    const { name, contact, age, gender, yoj, location, email } = req.body;
+    const { username,password,name, contact, age, gender, yoj, location, email } = req.body;
 
     try {
         const newVolunteer = new volunteer({
+            username,
+            password,
             name,
             contact,
             age,
@@ -88,10 +143,12 @@ app.post('/addvolunteer', async (req, res) => {
 
 
 app.post('/addvet', async (req, res) => {
-    const { name, gender, contact, doj, location, schedule } = req.body;
+    const {username,password, name, gender, contact, doj, location, schedule } = req.body;
 
     try {
         const newVet = new vet({
+            username,
+            password,
             name,
             gender,
             contact,
@@ -108,25 +165,7 @@ app.post('/addvet', async (req, res) => {
     }
 });
 
-app.post('/addvendor', async (req, res) => {
-    const { name, age, contact, cart, address } = req.body;
 
-    try {
-        const newVendor = new vendor({
-            name,
-            age,
-            contact,
-            cart,
-            address
-        });
-
-        await newVendor.save();
-        res.status(201).send('Vendor added successfully');
-    } catch (error) {
-        console.error('Error adding vendor:', error);
-        res.status(500).send('Error adding vendor');
-    }
-});
 
 
 app.get("/all_volunteers", async (req, res) => {

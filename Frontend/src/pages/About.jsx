@@ -3,9 +3,12 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import '../../src/Divider.css';
+import SearchAppBar from '@/components/ui/matbar';
 
 export default function NGOInformation() {
   return (
+    <>
+    <SearchAppBar/> 
     <div className="container">
       <div className="content">
         <div className="heading-container">
@@ -71,5 +74,6 @@ export default function NGOInformation() {
         </div>
       </div>
     </div>
+    </>
   );
 }

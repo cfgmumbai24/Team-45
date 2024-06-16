@@ -69,48 +69,68 @@ export default function SearchAppBar() {
           <Box sx={{ display: 'flex', flexGrow: 1, justifyContent: 'center', gap: 2 }}>
             <Typography
               variant="body1"
-              component="div"
+              component={Link}
+              to="/"
               sx={{ cursor: 'pointer' }}
             >
-              <Link to="/">
-                Home
-              </Link>
+              Home
+            </Typography>
+            <Typography
+              variant="body1"
+              component={Link}
+              to="/about"
+              sx={{ cursor: 'pointer' }}
+            >
+              Want to Help?
+            </Typography>
 
-            </Typography>
             <Typography
               variant="body1"
-              component="div"
+              component={Link}
+              to="/Admin"
               sx={{ cursor: 'pointer' }}
             >
-              <Link to="/about">
-                  About
-              </Link>
+              Admin
             </Typography>
-            <Typography
-              variant="body1"
-              component="div"
-              sx={{ cursor: 'pointer' }}
-            >
-                  Contact
-            </Typography>
+            
+           
           </Box>
-          <div className="absolute top-4 right-4 z-10">
-          <Link to="/login">
-            <button
-              style={{
-                backgroundColor: "blue",
-                color: "white",
-                border: "none",
-                padding: "10px 20px",
-                fontSize: "16px",
-                cursor: "pointer",
-                borderRadius: "5px",
-              }}
-            >
-              Login
-            </button>
-          </Link>
-        </div>
+          {/* Login Button */}
+          <div className="absolute top-4 right-4 z-10 flex gap-4">
+        <Link to="/login">
+          <button
+            style={{
+              backgroundColor: 'yellow',
+              color: 'black',
+              border: 'none',
+              padding: '10px 20px',
+              fontSize: '16px',
+              cursor: 'pointer',
+              borderRadius: '5px',
+            }}
+          >
+            Login
+          </button>
+        </Link>
+        
+        <Link to="/signup">
+          <button
+            style={{
+              backgroundColor: 'yellow',
+              color: 'black',
+              border: 'none',
+              padding: '10px 20px',
+              fontSize: '16px',
+              cursor: 'pointer',
+              borderRadius: '5px',
+            }}
+          >
+            Signup
+          </button>
+        </Link>
+      </div>
+
+          
         </Toolbar>
       </AppBar>
     </Box>

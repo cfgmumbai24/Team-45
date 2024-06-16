@@ -3,14 +3,17 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Vendor from '../src/pages/Vendor';  
-import Volunteer from './pages/Volunteer';
-import Beneficiary from './pages/Beneficiary';
+import PersonDetails from './pages/PersonDetails';
 // import NGOInformation from './pages/Divider';
 import About from './pages/About';
 import Home from './pages/Home'; 
 import Login from './components/ui/Login';
 import Vet from './pages/Vet';
 import MyComponent from './components/chatbot';
+
+import BeneficiaryList from './pages/Benificiary2';
+import GoatDetails from './pages/GoatDetails';
+import Signup from './components/ui/Signup';
 
 function App() {
   return (
@@ -30,11 +33,13 @@ function App() {
         <Routes>
           <Route path ="/" element = {<Home/>}/>
           <Route path="/vendor" element={<Vendor />} />
-          <Route path="/volunteer" element={<Volunteer />} />
-          <Route path="/Beneficiary" element = {< Beneficiary/>}/>
+          <Route path="/volunteer" element={<PersonDetails />} />
           <Route path="/login" element = {< Login/>}/>
           <Route path="/About" element = {< About/>}/>
           <Route path="/Vet/:uid" element = {< Vet/>}/>
+          <Route path="/signup" element={<Signup/>}/>
+          <Route path="/Benificiary" element={<BeneficiaryList/>}/>
+          <Route path="/GoatDetails" element = { < GoatDetails/>}/>
 
         </Routes>
         

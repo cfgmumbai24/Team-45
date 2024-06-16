@@ -1,9 +1,12 @@
 import React from 'react';
 import BasicTable from '@/components/schedule';
 import AlignItemsList from '@/components/emergency';
+import SearchAppBar from '@/components/ui/matbar';
 
 function Vet() {
     return (
+      <>
+      <SearchAppBar/>
         <div style={styles.container}>
             <div style={styles.content}>
                 <BasicTable/>
@@ -12,6 +15,7 @@ function Vet() {
                 <AlignItemsList/>
             </div>
         </div>
+        </>
     )
 }
 

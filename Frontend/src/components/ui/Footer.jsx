@@ -4,7 +4,7 @@ function Footer() {
   return (
     <div>
       <hr />
-      <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded dark:bg-slate-900 dark:text-white">
+      <footer className="footer p-10 bg-base-200 text-base-content rounded dark:bg-slate-900 dark:text-white">
         <nav className="flex justify-center space-x-4">
           <a className="link link-hover">About us</a>
           <a className="link link-hover">Contact</a>
@@ -28,8 +28,10 @@ function Footer() {
             </svg>
           </a>
         </nav>
-        <aside className="mt-4">
-          <p>Copyright © 2024 - All rights reserved by Eagle</p>
+        <aside className="mt-4 text-center">
+          <p className="text-sm">&copy; 2024 - All rights reserved by Eagle</p>
+          <p className="text-sm">Contact us: +91-9869350748</p>
+          <p className="text-sm">E MAIL: drvaishali2.shende@gmail.com</p>
         </aside>
       </footer>
     </div>

@@ -214,7 +214,7 @@ app.get("/all_vet", async (req, res) => {
 app.get("/all_beneficiary", async (req, res) => {
     try {
         // Fetch only the 'name' and 'location' fields from the all_beneficiary collection
-        const beninfo = await beneficiary.find({}).select('name location age');
+        const beninfo = await beneficiary.find({}).select('name location age contact gender profit address');
 
         res.status(200).send({
             data: beninfo

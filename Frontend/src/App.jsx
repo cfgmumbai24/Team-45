@@ -33,9 +33,10 @@ function App() {
           <Route path="/Beneficiary" element = {< Beneficiary/>}/>
           <Route path="/login" element = {< Login/>}/>
           <Route path="/About" element = {< About/>}/>
-          <Route path="/Vet" element = {< Vet/>}/>
+          <Route path="/Vet/:uid" element = {< Vet/>}/>
 
         </Routes>
+        
       </div>
     </Router>
   );

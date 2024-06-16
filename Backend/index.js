@@ -28,10 +28,11 @@ app.post('/signup', async (req, res) => {
     }
 });
 app.post('/login', async (req, res) => {
-    const { username, password, role } = req.body;
+    const { username, password, userType } = req.body;
+    console.log(userType);
     try {
         let user = null;
-        switch (role) {
+        switch (userType) {
             case 'vendor':
                 user = await vendor.findOne({ username });
                 break;
@@ -52,7 +53,7 @@ app.post('/login', async (req, res) => {
             });
         }
         if (user.password == password){
-            res.status(200).send({
+            return res.status(200).send({
                 message: 'Login successful',
                 user
             });
@@ -187,6 +188,7 @@ app.get("/all_vendors", async (req, res) => {
         res.status(200).send({
             data: vendors
         });
+
     } catch (error) {
         res.status(500).send({
             error: 'An error occurred while fetching the beneficiary data.',

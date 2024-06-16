@@ -1,5 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from 'react-router-dom';
+import axios from "axios";
 
 function Login() {
   const {
@@ -8,9 +10,26 @@ function Login() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
+  const navigate = useNavigate();
+
+  const onSubmit = async (data) => {
     // This function can handle form submission logic if needed
     console.log(data);
+    const response = await axios.post("http://localhost:3000/login", data);
+    console.log(response.data.message);
+    if (response.data.message){
+      console.log("inside if")
+      if(data.userType == "vendor"){
+       // window.location.href = "/vendor";
+      }
+      else if(data.userType == "Volunteer"){
+        //window.location.href = "/volunteer"
+      }
+      else{
+        console.log(response.data)
+        navigate(`/vet/${response.data.user._id}`);
+      }
+    } 
   };
 
   return (

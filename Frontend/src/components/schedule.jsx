@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react';
+import { useParams } from 'react-router-dom';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -9,17 +10,23 @@ import Paper from '@mui/material/Paper';
 
 import axios from 'axios'
 
-function createData(day, time) {
-  return { day, time};
+function createData(date, task) {
+  return { date, task};
 }
 
 export default function BasicTable() {
+  const url = window.location.href;
+  const parts = url.split('/');
+  const lastElement = parts[parts.length - 1];
   const [schedule, setSchedule] = useState({});
 
   useEffect(() => {
+
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/vet/666db7b121c9e854f7a0ec2c");
+        console.log(lastElement);
+        //console.log(useParams);
+        const response = await axios.get(`http://localhost:3000/vet/${lastElement}`);
         console.log(response.data.data.schedule)
         setSchedule(response.data.data.schedule);
       } catch (error) {
@@ -33,7 +40,7 @@ export default function BasicTable() {
   const rowsdata = [];
 
   for (let i = 0; i < schedule.length; i++) {
-    rowsdata.push(createData(schedule[i].day, schedule[i].time));
+    rowsdata.push(createData(schedule[i].date, schedule[i].task));
   }
 
   console.log(rowsdata)
@@ -55,9 +62,9 @@ export default function BasicTable() {
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
                 <TableCell component="th" scope="row">
-                  {row.day}
+                  {row.date}
                 </TableCell>
-                <TableCell align="right">{row.time}</TableCell>
+                <TableCell align="right">{row.task}</TableCell>
               </TableRow>
             ))}
           </TableBody>

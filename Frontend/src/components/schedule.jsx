@@ -46,7 +46,8 @@ export default function BasicTable() {
   console.log(rowsdata)
   
   return (
-    <div style={{ width: '50vw', height: '75vh', overflow: 'auto' }}>
+    <div style={{ width: '50vw', height: '30vh', overflow: 'auto' }}>
+      <button style={{backgroundColor: 'green', borderRadius: '5px'}}><h1 style={{color: 'white', padding: '5px'}}>Scheduling</h1></button>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>

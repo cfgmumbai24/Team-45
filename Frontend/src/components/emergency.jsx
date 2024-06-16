@@ -10,13 +10,14 @@ import Typography from '@mui/material/Typography';
 export default function AlignItemsList() {
   return (
     <div style={{ width: '30vw', height: '30vh', overflow: 'auto' }}>
+        <button style={{backgroundColor: 'red', borderRadius: '5px'}}><h1 style={{color: 'white', padding: '10px'}}>Emergency Requests</h1></button>
         <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
         <ListItem alignItems="flex-start">
             <ListItemAvatar>
             <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
             </ListItemAvatar>
             <ListItemText
-            primary="Brunch this weekend?"
+            primary="Blue tongue (BT)"
             secondary={
                 <React.Fragment>
                 <Typography
@@ -25,9 +26,9 @@ export default function AlignItemsList() {
                     variant="body2"
                     color="text.primary"
                 >
-                    Ali Connors
+                    Vanshika
                 </Typography>
-                {" — I'll be in your neighborhood doing errands this…"}
+                {" — Block - Murbad"}
                 </React.Fragment>
             }
             />
@@ -38,7 +39,7 @@ export default function AlignItemsList() {
             <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
             </ListItemAvatar>
             <ListItemText
-            primary="Summer BBQ"
+            primary="Peste-des-Petits Ruminants (PPR)"
             secondary={
                 <React.Fragment>
                 <Typography
@@ -47,9 +48,9 @@ export default function AlignItemsList() {
                     variant="body2"
                     color="text.primary"
                 >
-                    to Scott, Alex, Jennifer
+                    Tanmay
                 </Typography>
-                {" — Wish I could come, but I'm out of town this…"}
+                {" — Block - Karjat"}
                 </React.Fragment>
             }
             />
@@ -60,7 +61,7 @@ export default function AlignItemsList() {
             <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
             </ListItemAvatar>
             <ListItemText
-            primary="Oui Oui"
+            primary="Brucellosis"
             secondary={
                 <React.Fragment>
                 <Typography
@@ -69,9 +70,9 @@ export default function AlignItemsList() {
                     variant="body2"
                     color="text.primary"
                 >
-                    Sandra Adams
+                    Tejas
                 </Typography>
-                {' — Do you have Paris recommendations? Have you ever…'}
+                {' — Block - Khalapur'}
                 </React.Fragment>
             }
             />

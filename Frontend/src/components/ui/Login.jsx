@@ -20,10 +20,10 @@ function Login() {
     if (response.data.message){
       console.log("inside if")
       if(data.userType == "vendor"){
-       window.location.href = "/vendor";
+        navigate(`/vendor`);
       }
       else if(data.userType == "Volunteer"){
-        window.location.href = "/volunteer"
+        navigate(`/volunteer`);
       }
       else{
         console.log(response.data)

@@ -10,6 +10,7 @@ import About from './pages/About';
 import Home from './pages/Home'; 
 import Login from './components/ui/Login';
 import Vet from './pages/Vet';
+import MyComponent from './components/chatbot';
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
             </li>
           </ul>
         </nav>
-
+        <MyComponent/>
         <Routes>
           <Route path ="/" element = {<Home/>}/>
           <Route path="/vendor" element={<Vendor />} />

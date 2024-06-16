@@ -57,7 +57,7 @@ export default function SearchAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-        <Link to="/HomeHindi">
+        <Link to="/">
           <button
             style={{
               backgroundColor: '#E0FBE2',
@@ -69,10 +69,9 @@ export default function SearchAppBar() {
               borderRadius: '5px',
             }}
           >
-            Hindi
+            अंग्रेज़ी
           </button>
         </Link>
-        
           <Box sx={{ display: 'flex', flexGrow: 1, justifyContent: 'center', gap: 2 }}>
             <Typography
               variant="body1"
@@ -80,7 +79,7 @@ export default function SearchAppBar() {
               to="/"
               sx={{ cursor: 'pointer' }}
             >
-              Home
+              घर
             </Typography>
             <Typography
               variant="body1"
@@ -88,7 +87,7 @@ export default function SearchAppBar() {
               to="/about"
               sx={{ cursor: 'pointer' }}
             >
-              Want to Help?
+              मदद करने की इच्छा है?
             </Typography>
            
           </Box>
@@ -106,7 +105,7 @@ export default function SearchAppBar() {
               borderRadius: '5px',
             }}
           >
-            Login
+          लॉग इन करें
           </button>
         </Link>
         
@@ -122,7 +121,7 @@ export default function SearchAppBar() {
               borderRadius: '5px',
             }}
           >
-            Signup
+            साइन अप करें
           </button>
         </Link>
       </div>

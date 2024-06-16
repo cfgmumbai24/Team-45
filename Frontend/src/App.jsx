@@ -15,6 +15,8 @@ import BeneficiaryList from './pages/Benificiary2';
 import GoatDetails from './pages/GoatDetails';
 import Signup from './components/ui/Signup';
 
+import HomeHindi from './pages/HomeHindi'; 
+
 function App() {
   return (
     <Router>
@@ -31,6 +33,7 @@ function App() {
         </nav>
         <MyComponent/>
         <Routes>
+        <Route path ="/HomeHindi" element = {<HomeHindi/>}/>
           <Route path ="/" element = {<Home/>}/>
           <Route path="/vendor" element={<Vendor />} />
           <Route path="/volunteer" element={<PersonDetails />} />

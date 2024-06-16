@@ -39,13 +39,13 @@ function Banner() {
       <div style={{ ...containerStyles, marginTop: '20px' }}>
         <div style={headingStyles}>
           <h1 className="text-2xl md:text-4xl font-bold" >
-            EAGL Livestock Foundation is here to save lives and create a{' '}
-            <span className="text-pink-500">brighter future!!!</span>
+              ईएजीएल लाइवस्टॉक फाउंडेशन जीवन बचाने और{' '}
+            <span className="text-pink-500">उज्जवल भविष्य बनाने के लिए यहां है!!!</span>
           </h1>
           <br></br>
           <br></br>
           <p  className="text-sm md:text-xl" >
-            Welcome to the Eagl Foundation, your beacon of hope and stability for tribal communities. At Eagl Foundation, we are dedicated to empowering tribal families, curbing migration, and paving the way for a sustainable future. Our initiatives provide the tools and resources necessary for building a stable, self-sufficient life while preserving the rich cultural heritage of these communities. Join us in our mission to create a brighter, more secure future for all. Dive in and discover the impactful work we do today!
+          ईगल फाउंडेशन में आपका स्वागत है, यह आदिवासी समुदायों के लिए आशा और स्थिरता की किरण है। ईगल फाउंडेशन में, हम आदिवासी परिवारों को सशक्त बनाने, पलायन को रोकने और एक स्थायी भविष्य का मार्ग प्रशस्त करने के लिए समर्पित हैं। हमारी पहल इन समुदायों की समृद्ध सांस्कृतिक विरासत को संरक्षित करते हुए एक स्थिर, आत्मनिर्भर जीवन के निर्माण के लिए आवश्यक उपकरण और संसाधन प्रदान करती है। सभी के लिए एक उज्जवल, अधिक सुरक्षित भविष्य बनाने के हमारे मिशन में हमारे साथ जुड़ें। इसमें गोता लगाएँ और आज हमारे द्वारा किए जाने वाले प्रभावशाली कार्यों को जानें!
           </p>
           <br></br>
         </div>

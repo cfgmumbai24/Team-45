@@ -1,5 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Signup() {
   const {
@@ -7,12 +9,25 @@ function Signup() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  
+  const navigate = useNavigate(); // Use the hook here
 
-  const onSubmit = (data) => {
-    // This function can handle form submission logic if needed
-    console.log(data);
-    // Reset the form after submission
-    // reset();
+  const onSubmit = async (data) => {
+    console.log("Form data:", data); // Log form data
+    try {
+      const response = await axios.post("http://localhost:3000/todos", {
+        username: data.username,
+        password: data.password,
+        name: data.name,
+        age: data.age,
+        contact: data.contact,
+        address: data.address,
+      });
+      console.log("Response data:", response.data); // Log response data
+      navigate("/vendor");
+    } catch (error) {
+      console.error("Error creating vendor:", error.response ? error.response.data : error.message);
+    }
   };
 
   return (
@@ -103,20 +118,6 @@ function Signup() {
             {errors.contact && (
               <span className="text-red-500 text-sm">This field is required</span>
             )}
-          </div>
-
-          {/* Cart Input */}
-          <div className="mb-4">
-            <label htmlFor="cart" className="block text-sm font-bold mb-2">
-              Cart
-            </label>
-            <input
-              type="text"
-              id="cart"
-              placeholder="Enter your cart details"
-              className="w-full px-3 py-2 border rounded-md bg-white text-black"
-              {...register("cart")}
-            />
           </div>
 
           {/* Address Input */}

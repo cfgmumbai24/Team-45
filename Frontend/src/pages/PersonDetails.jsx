@@ -1,9 +1,11 @@
 import React from 'react';
 import '../PersonDetailsCSS.css';
+import SearchAppBar from '@/components/ui/matbar';
 
 export default function PersonDetails() {
   return (
       <>
+      <SearchAppBar/>
     <div className="container">
       <div className="left-container">
         <div className="details-box">

@@ -62,6 +62,7 @@ import { CardActionArea, Button } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import '../Vendor.css'; // Import the CSS file
+import SearchAppBar from '@/components/ui/matbar';
 
 export default function Vendor() {
   const [data, setData] = useState([]);
@@ -80,6 +81,8 @@ export default function Vendor() {
   };
 
   return (
+    <>
+    <SearchAppBar/>
     <Container className="vendor-container">
       <p variant="h4" className="vendor-title">
         Goat Breeds
@@ -121,5 +124,6 @@ export default function Vendor() {
         ))}
       </Grid>
     </Container>
+    </>
   );
 }

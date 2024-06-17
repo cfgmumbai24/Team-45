@@ -1,8 +1,8 @@
 from twilio.rest import Client
 import random
 
-account_sid = 'AC2b0ca5563a2625a8e35161b8512f75df'
-auth_token = 'fdb60fdbac1c6ee89b01eda0f4b18a06'
+account_sid = ''
+auth_token = ''
 client = Client(account_sid, auth_token)
 
 otp = str(round(random.random()*100000))

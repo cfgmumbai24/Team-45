@@ -1,4 +1,4 @@
-# Team-45
+# EAGL Website (Team - 45)
 A responsive web application to aid the NGO - EAGL Livelihood Foundation 
 To provide services like Authorisation, AI Chatbot, and enabled the NGO to manage their events,
 volunteers, and funding efficiently
